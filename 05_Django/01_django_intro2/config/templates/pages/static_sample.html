@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'stylesheets/sample.css' %}">
+  {% endblock %}
+</head>
+{% block body %}
+  <h1>정적 파일 출력을 실습해보자!</h1>
+  <img src="{% static 'images/jisu.jpg' %}" alt="jisu">
+{% endblock %}
+</html>

@@ -3,6 +3,9 @@ import requests
 import random
 
 # Create your views here.
+def index(request):
+    return render(request, 'pages/index.html')
+
 def regist(request):
     year = '94'
     month = '06'
@@ -12,14 +15,14 @@ def regist(request):
         'month': month,
         'day': day
     }
-    return render(request, 'regist.html', context)
+    return render(request, 'pages/regist.html', context)
 
 # 정보를 던져줄 페이지
 def throw(request):
     print(request)
     print(request.GET)
     #=> <QueryDict : {'messge': message}
-    return render(request, 'throw.html')
+    return render(request, 'pages/throw.html')
 
 # 사용자로부터 정보를 받아서 다시 던져줄 페이지
 def catch(request):
@@ -27,12 +30,12 @@ def catch(request):
     context = {
         'message': message
     }
-    return render(request, 'catch.html', context)
+    return render(request, 'pages/catch.html', context)
 
 # [실습] 아스키 아티 ASCII ARTI
 # 사용자로부터 텍스트 입력받는 페이지
 def art(request):
-    return render(request, 'art.html')
+    return render(request, 'pages/art.html')
 
 # 텍스트 받아서 아스키 아트로 보여주는 페이지
 def result(request):
@@ -58,11 +61,11 @@ def result(request):
         'result': result
     }
 
-    return render(request, 'result.html', context)
+    return render(request, 'pages/result.html', context)
 
 # 회원가입 폼을 보여주는 페이지
 def user_new(request):
-    return render(request, 'user_new.html')
+    return render(request, 'pages/user_new.html')
 
 # 회원가입 요청을 처리하는 페이지(로직)
 def user_create(request):
@@ -72,7 +75,7 @@ def user_create(request):
         'user_id': user_id,
         'pwd': pwd
     }
-    return render(request, 'user_create.html', context)
+    return render(request, 'pages/user_create.html', context)
 
 def static_sample(request):
-    return render(request, 'static_sample.html')
+    return render(request, 'pages/static_sample.html')

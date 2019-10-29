@@ -10,4 +10,5 @@ urlpatterns = [
     path('catch/', views.catch),
     path('throw/', views.throw),
     path('regist/', views.regist),
+    path('', views.index)
 ]
