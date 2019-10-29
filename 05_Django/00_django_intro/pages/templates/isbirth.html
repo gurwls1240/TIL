@@ -1,0 +1,12 @@
+<h1>생일 확인하기</h1>
+<p>오늘 : {{today}}</p>
+<p>내 생일 : {{month}}월 {{day}}일 </p>
+{% if todaymonth == month %}
+  {% if todayday == day %}
+    <p>예!</p>
+  {% else %}
+    <P>아니오!</p>
+  {% endif %}
+{% else %}
+  <p>아니오!</P>
+{% endif %}

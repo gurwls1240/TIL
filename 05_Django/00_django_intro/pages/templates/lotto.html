@@ -1,0 +1,15 @@
+<h1>로또 번호 맞추기</h1>
+<p>당첨 번호</p>
+<ul>
+  {% for number in lotto %}
+    <p>{{number}}</p>
+  {% endfor %}
+</ul>
+<p>내 번호</p>
+<ul>
+  {% for number2 in mynum2 %}
+    <p>{{number2}}</p>
+  {% endfor %}
+</ul>
+<p>{{cnt}}개 맞았습니다.</p>
+<p>{{result}} 입니다! </p>
