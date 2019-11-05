@@ -7,6 +7,17 @@
   article.image.url : 파일 주소
     articles.image : 파일 이름 (sample.png)
     -->
+<!--
+  1. 샘플 이미지(static)를 넣어두고, 이미지 없는 게시글은 샘플 이미지가 나오도록 한다.
+  2. 이미지 있는 경우에만 이미지를 보여준다.
+-->
+{% if article.image %}
+  <img src="{{article.image.url }}" alt="{{article.image}}">
+{% else %}
+  <p>사진이 없어요...</p>
+  <img src="{% static 'articles/images/no_image.jpg' %}" alt="no_image">
+{% endif %}
+
 <p>이미지 : {{ article.image}} </p>
 <p>글 번호 : {{article.pk}}</p>
 <p>글 제목 : {{article.title}}</p>
