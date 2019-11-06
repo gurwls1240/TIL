@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block body %}
 <h1 class="text-center"> DETAIL </h1>
 
@@ -15,7 +15,7 @@
   <img src="{{article.image.url }}" alt="{{article.image}}">
 {% else %}
   <p>사진이 없어요...</p>
-  <img src="{% static 'articles/images/no_image.jpg' %}" alt="no_image">
+  <img src="{% static 'articles/kim.jpg' %}" alt="no_image">
 {% endif %}
 
 <p>이미지 : {{ article.image}} </p>
