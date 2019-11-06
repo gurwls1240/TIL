@@ -1,0 +1,17 @@
+{% extends 'articles/base.html' %}
+{% load static %}
+{% block body%}
+<h1 class="text-center">Articles</h1>
+
+<a href="{% url 'articles:create' %}">[NEW]</a>
+<hr>
+{% for article in articles %}
+{% comment %} <p> 번호 :{{article.pk}}</p>
+<p> 제목: {{article.title}}</p> {% endcomment %}
+<p>
+[{{article.pk}}] {{article.title}}<br>
+<a href="{% url 'articles:detail' article.pk %}">[DETAIL]</a>
+</p>
+<hr>
+{% endfor %}
+{% endblock %}
