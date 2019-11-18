@@ -12,4 +12,5 @@ urlpatterns = [
     path('<int:article_pk>/update/' , views.update, name='update'), #GET(edit) / POST(update)
     path('<int:article_pk>/delete/', views.delete, name='delete'),      # DELETE Logic
     path('<int:article_pk>/', views.detail, name='detail'),    # READ Logic - Deatil
+    path('<int:article_pk>/comments/', views.comment_create, name='comments_create'),
 ]

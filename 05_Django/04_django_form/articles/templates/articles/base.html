@@ -1,4 +1,5 @@
-{% load static %}
+{% load bootstrap4 %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>장고 CRUD</title>
-  <link rel="shortcut icon" href="{% static 'articles/favicon/favicon.jpg' %}" type="image/x-icon">
-  </head>
+
+  {% bootstrap_css %}
+</head>
 <body>
   <div class="container">
     {% block body %}
     {% endblock %}
   </div>
+
+    {% bootstrap_javascript jquery='full' %}
+  
   </body>
 </html>

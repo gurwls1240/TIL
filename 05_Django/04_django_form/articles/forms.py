@@ -47,3 +47,9 @@ class ArticleForm(forms.ModelForm):
         model = Article
         fields = ('title', 'content')
         # fields = ('__all__')
+
+class CommentForm(forms.ModelForm):
+    
+    class Meta:
+        model = Comment
+        fields = ('content',)

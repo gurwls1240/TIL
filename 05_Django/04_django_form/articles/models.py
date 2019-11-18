@@ -18,3 +18,17 @@ class Article(models.Model):
 
     def __str__(self):
         return f'[{self.pk}] {self.title}'
+
+class Comment(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    # Model Level에서 메타데이터 옵션 설정 -> 정렬 기능
+    class Meta:
+        ordering = ('-pk', )
+
+    # 객체 표현 방식
+    def __str__(self):
+        return self.content
