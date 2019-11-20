@@ -1,0 +1,27 @@
+{% extends 'articles/base.html' %}
+{% load bootstrap4 %}
+
+{% block body %}
+{% if request.resolver_match.url_name == 'create' %}
+  <h1 class="text-center">CREATE</h1>
+{% else %}
+  <h1 class="text-center">UPDATE</h1>
+{% endif %}
+<hr>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {% comment %} {{form.as_p}} {% endcomment %}
+  {% bootstrap_form form layout='inline'%}
+  {% buttons submit='제출' reset='초기화' %}
+  {% endbuttons %}
+  {% comment %} <input type="submit"> {% endcomment %}
+</form>
+<hr>
+{% if request.resolver_match.url_name == 'create' %}
+<a href="{% url 'articles:index' %}">[BACK]</a>
+{% else %}
+<a href="{% url 'articles:detail' article.pk %}">[BACK]</a>
+{% endif %}
+
+{% endblock %}

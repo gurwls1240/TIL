@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+{% block body %}
+<h1 class ="text-center"> ଘ(੭*ˊᵕˋ)੭* ੈ✩‧₊˚ ✩‧₊˚ </h1>
+<a href = "{% url 'articles:create' %}" > [new] </a>
+<hr>
+<div class ="row">
+{% for article in articles %}
+<!-- 모듈화 시켜둔 article 템플릿 가져오기 -->
+  {% include 'articles/_article.html' %}
+{% endfor %}
+</div>
+
+{% endblock %}
+
